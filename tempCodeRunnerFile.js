@@ -6,38 +6,12 @@ const cors = require("cors")
 app.use(cors())
 app.use(bodyParser())
 
-
-let users = [];
-
-const adduser = (userdata) => {
-  users.push(userdata);
-}
-app.post("/user", (req, res)=> {
-  adduser(req.body);
-  res.send("user successfully adden");
-})
-app.get('/user', function (req, res) {
-  res.send(users)
-})
-app.put('/user', function (req, res) {
-  const { name, age } = req.body;
-  const filtered = users.filter((user)=>{
-    return user.name == name; 
-  })
-  filtered.age=age
-  res.send(filtered);
-
-  
-  
-})
-
 app.get('/', function (req, res) {
+  console.log("ajiljbnu")
   res.send({data:popular})
 })
 
-app.listen(4000)
-
-
+app.listen(3000)
 
 // [
 //     {
